@@ -1,0 +1,114 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(116, 0, 0)
+}
+
+.div {
+    border: 1px solid black;
+}
+
+body {
+    background: #ffffff url(https://vignette.wikia.nocookie.net/warframe/images/5/50/Wiki-background/revision/latest?cb=20190402071843) top center repeat;
+}
+
+#container {
+    margin: 10px;
+}
+
+.content {
+       background: #ffffffba;
+    overflow: auto;
+}
+
+footer {
+    text-align: center;
+    margin: 10px;
+}
+
+.welcome {
+  
+}
+
+.welcome>* {
+    vertical-align: top;
+    overflow: auto;
+}
+
+.about {
+    background: #61d3e4;
+    padding: 20px;
+    margin: 10px;
+    height: 340px;
+}
+
+.signup {
+   
+}
+
+#loginForm {
+    display: block;
+    background: #61d3e4;
+    margin: 39px;
+    padding: 5px;
+    position: relative;
+}
+#loginForm div{
+    margin: 2rem;
+    text-align: center;
+}
+#loginForm p{
+   font-size: 2em;
+}
+
+#loginForm div input{
+    width: 50%;
+    padding: 1rem;
+    border-radius: 3rem;
+    border-style: none;
+    font-size: 1rem;
+}
+
+
+#loginForm>* {
+   
+    box-sizing: border-box;
+}
+
+#registerForm {
+    display: block;
+    background: #61d3e4;
+    margin: 39px;
+    padding: 5px;
+    position: relative;
+}
+#registerForm div{
+    margin: 22px;
+    text-align: center;
+}
+#registerForm p{
+    font-size: 2em;
+ }
+ 
+ #registerForm div input{
+     width: 50%;
+     padding: 8px;
+     border-radius: 3rem;
+     border-style: none;
+     font-size: 1rem;
+ }
+ 
+
+
+#registerForm>* {
+    
+    box-sizing: border-box;
+}
+
+#btnLogin, #btnRegister {
+   
+}

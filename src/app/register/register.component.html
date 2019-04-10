@@ -1,0 +1,21 @@
+<section id="viewWelcome">
+  <div class="welcome">
+    <div class="signup">
+      <form #f="ngForm" (ngSubmit)="register()" id="registerForm">
+        <div>
+            <p>Register</p>
+            <div><p>Username</p>
+              <input required name="username" ngModel type="text"></div>
+            <div> <p>Password</p>
+              <input required name="password" ngModel #pass="ngModel" type="password"></div>
+            <div> <p>Repeat Password</p>
+              <input required name="repeatPass" ngModel #repeatPass="ngModel" type="password"></div>
+            <div *ngIf="pass.value !== repeatPass.value">
+              Passwords must match!
+            </div>
+            <input id="btnRegister" [disabled]="f.invalid" value="Sign Up" type="submit">
+        </div>
+        </form>
+    </div>
+    </div>
+</section>

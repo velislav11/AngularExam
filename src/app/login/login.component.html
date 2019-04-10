@@ -1,0 +1,22 @@
+<section id="viewWelcome">
+  <div class="welcome">
+    <div class="signup">
+      <form #f="ngForm" (ngSubmit)="login()" id="loginForm">
+      <div>
+          <p>Sign In</p>
+          <div>
+              <p>Username</p>
+              <input required name="username" ngModel type="text">
+          </div>
+          <div>
+              <p>Password</p>
+              <input required name="password" ngModel type="password">
+          </div>
+          
+          <input id="btnLogin" [disabled]="f.invalid" value="Sign In" type="submit">
+       
+      </div>  
+      </form>
+    </div>
+  </div>
+</section>
