@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { PostService } from '../services/post.service';
-import { CommentService } from '../services/comment.service';
+import { PostService } from 'src/app/core/services/post.service';
+import { CommentService } from 'src/app/core/services/comment.service';
 
 @Component({
   selector: 'app-post-details',
@@ -60,8 +60,8 @@ export class PostDetailsComponent implements OnInit {
       })
   }
 
-  isAuthor() {
-    return this.post['_acl']['creator'] === localStorage.getItem('userId');
+  isAuthor(commentInfo: Object) {
+    return commentInfo['_acl']['creator'] === localStorage.getItem('userId');
   }
 
   deletePost(id: string) {

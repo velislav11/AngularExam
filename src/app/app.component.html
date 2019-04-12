@@ -1,23 +1,9 @@
 <div id="container">
-  <header>
-    <span class="logo"></span><span class="header">AbautWarframe</span>
-   
-      
-      <ng-template [ngIf]="!isLoggedIn">
-        <a class="nav" [routerLink]="[ '/login' ]">Login</a>
-        <a class="nav" [routerLink]="[ '/register' ]">Register</a>
-      </ng-template>
-      <ng-template [ngIf]="isLoggedIn">
-        <a class="nav" [routerLink]="[ '/posts' ]">Catalog</a>
-        <a class="nav" [routerLink]="[ '/posts/create' ]">Submit Link</a>
-        <a class="nav" [routerLink]="[ '/posts/user' ]">My Posts</a>
-      </ng-template>
-    <div *ngIf="isLoggedIn" id="profile"><span>{{username}}</span><button (click)="logout()">logout</button></div>
-  </header>
-  <div class="content">
-    
+   <app-header></app-header>
 
-    <router-outlet></router-outlet>
-  </div>
-  <footer>AbautWarframe {{date | date: 'yyyy'}}</footer>
+    <div class="content">
+             <router-outlet></router-outlet>
+             <app-footer></app-footer>
+    </div>
+    
 </div>

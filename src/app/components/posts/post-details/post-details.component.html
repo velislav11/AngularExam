@@ -2,7 +2,7 @@
   <ng-template [ngIf]="post">
     <article class="post">
       <div class="col rank">
-        <span>1</span>
+        <span>{{post['_kmd']['lmt'] | date}}</span>
       </div>
       <div class="col thumbnail">
         <a href="{{post['url']}}">
@@ -18,7 +18,7 @@
         <div class="details">
           <p>{{post['description']}}</p>
           <div class="info">
-            submitted by {{post['author']}}
+            Posted by {{post['author']}}
           </div>
           <div class="controls">
             <ul>
@@ -46,7 +46,7 @@
       <p>{{commentInfo['content']}}</p>
       <div class="info">
         submitted by {{commentInfo['author']}} |
-        <button *ngIf="isAuthor()" (click)="deleteComment(commentInfo['_id'])" class="deleteLink">
+        <button *ngIf="isAuthor(commentInfo)" (click)="deleteComment(commentInfo['_id'])" class="deleteLink">
           delete
         </button>
       </div>

@@ -7,13 +7,16 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { PostCreateComponent } from './post-create/post-create.component';
-import { PostEditComponent } from './post-edit/post-edit.component';
-import { PostDetailsComponent } from './post-details/post-details.component';
-import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './components/authentication/register/register.component';
+import { LoginComponent } from './components/authentication/login/login.component';
+import { PostListComponent } from './components/posts/post-list/post-list.component';
+import { PostCreateComponent } from './components/posts/post-create/post-create.component';
+import { PostEditComponent } from './components/posts/post-edit/post-edit.component';
+import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
+import { HomeComponent } from './components/shared/home/home.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { ComponentComponent } from './components/shared/component/component.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import { HomeComponent } from './home/home.component';
     PostEditComponent,
     PostDetailsComponent,
     HomeComponent,
+    HeaderComponent,
+    ComponentComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

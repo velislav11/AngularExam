@@ -3,22 +3,23 @@
     <ng-template [ngIf]="allPosts">
       <article *ngFor="let post of allPosts; let i = index;" class="post">
         <div class="col rank">
-          <span>{{i}}</span>
+          <span>{{post['_kmd']['lmt'] | date}}</span>
         </div>
         <div class="col thumbnail">
-          <a href="{{post['url']}}">
+          <a [routerLink]="[ '/posts/details', post['_id'] ]">
             <img src="{{post['imageUrl']}}">
           </a>
         </div>
-        <div class="post-content">
+        <div  class="post-content">
           <div class="title">
             <a  [routerLink]="[ '/posts/details', post['_id'] ]" >
               {{post['title']}}
+              
             </a>
           </div>
           <div class="details">
             <div class="info">
-              submitted by {{post['author']}}
+              Posted by {{post['author']}}
             </div>
             <div class="controls">
               <ul>

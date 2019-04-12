@@ -1,0 +1,14 @@
+
+<header>
+    <span class="logo"></span><a class="header" *ngIf="isLoggedIn"  [routerLink]="[ '/posts' ]" >AbautWarframe</a>
+    <a class="header" *ngIf="!isLoggedIn"  [routerLink]="[ '/home' ]" >AbautWarframe</a>
+      <ng-template [ngIf]="!isLoggedIn">
+        <a class="nav" [routerLink]="[ '/login' ]">Login</a>
+        <a class="nav" [routerLink]="[ '/register' ]">Register</a>
+      </ng-template>
+      <ng-template [ngIf]="isLoggedIn">
+        <a class="nav" [routerLink]="[ '/posts/create' ]">Submit a discussions </a>
+        <a class="nav" [routerLink]="[ '/posts/user' ]">My Posts</a>
+      </ng-template>
+    <div *ngIf="isLoggedIn" id="profile"><span>{{username}}</span><button (click)="logout()">logout</button></div>
+  </header>

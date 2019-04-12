@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { PostListComponent } from './post-list/post-list.component';
-import { PostCreateComponent } from './post-create/post-create.component';
-import { PostEditComponent } from './post-edit/post-edit.component';
-import { PostDetailsComponent } from './post-details/post-details.component';
-import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './components/authentication/login/login.component';
+import { RegisterComponent } from './components/authentication/register/register.component';
+import { PostListComponent } from './components/posts/post-list/post-list.component';
+import { PostCreateComponent } from './components/posts/post-create/post-create.component';
+import { PostEditComponent } from './components/posts/post-edit/post-edit.component';
+import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
+import { HomeComponent } from './components/shared/home/home.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
-  { path: 'home', component:HomeComponent },
+  { path: 'home' ,component:HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'posts', component: PostListComponent },
