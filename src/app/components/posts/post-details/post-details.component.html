@@ -22,7 +22,7 @@
           </div>
           <div class="controls">
             <ul>
-              <li class="action"><a [routerLink]="[ '/posts/details', post['_id'] ]" class="commentsLink">comments</a>
+              <li *ngIf='!comments' class="action"><a [routerLink]="[ '/posts/details', post['_id'] ]" class="commentsLink">comments</a>
               </li>
               <ng-template [ngIf]="isAuthor(post)">
                 <li class="action"><a [routerLink]="[ '/posts/edit', post['_id'] ]" href="#">edit</a></li>

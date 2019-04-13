@@ -1,8 +1,18 @@
 .post {
-  overflow: auto;
   background: #61d3e4;
   margin: 15px;
-  position: relative;
+  flex: 0 0 45%;
+
+}
+.post .title{
+  text-align: center;
+}
+.post button{
+  text-align: center;
+  background-color: #fffffff2;
+  padding: 4px;
+  transform: skew(-16deg);
+  text-decoration: none;
 }
 
 .clear {
@@ -27,7 +37,7 @@
 }
 
 .rank {
-  width: 30px;
+  width: 92px;
   text-align: center;
   color: #999999;
   font-weight: bold;
@@ -46,6 +56,7 @@
 }
 
 .thumbnail {
+  background-color: #ffffff2e;
   width: 100px;
   text-align: center;
 }
@@ -62,7 +73,8 @@
 }
 
 .details {
-  margin-top: 10px;
+  margin-top: 32px;
+ text-align: center;
 }
 
 .info {
@@ -121,4 +133,8 @@
   width: 100px;
 }
 
+.posts{
+  flex-wrap: wrap;
+    display: flex;
+}
 

@@ -27,7 +27,7 @@
                 </li>
                 <ng-template [ngIf]="isAuthor(post)">
                   <li class="action"><a [routerLink]="[ '/posts/edit', post['_id'] ]" href="#">edit</a></li>
-                  <li class="action"><button (click)="deletePost(post['_id'])">delete</button></li>
+                  <li class="action"><button (click)="onDeletePost(post['_id'])">delete</button></li>
                 </ng-template>
               </ul>
             </div>

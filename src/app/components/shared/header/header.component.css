@@ -8,11 +8,9 @@ header {
   
   #profile {
     display: inline-flex;
-    text-align: right;
+    position: absolute;
     right: 0;
-    font-size: 20px;
-    bottom: 18px;
-    padding-left: 10px;
+    margin-top: 16px;
     padding-right: 10px;
   }
   #profile button{
