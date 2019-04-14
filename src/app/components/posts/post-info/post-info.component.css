@@ -1,11 +1,14 @@
 .post {
+  overflow: auto;
   background: #61d3e4;
   margin: 15px;
-  flex: 0 0 45%;
+  position: relative;
 }
-.post .title{
-  text-align: center;
+
+.clear {
+  clear: both;
 }
+
 .post button{
   text-align: center;
   background-color: #fffffff2;
@@ -13,11 +16,6 @@
   transform: skew(-16deg);
   text-decoration: none;
 }
-
-.clear {
-  clear: both;
-}
-
 .col {
   float: left;
   display: inline-block;
@@ -36,7 +34,7 @@
 }
 
 .rank {
-  width: 92px;
+  width: 30px;
   text-align: center;
   color: #999999;
   font-weight: bold;
@@ -50,12 +48,11 @@
 .voting {
   width: 50px;
   text-align: center;
-  color: #030303;
+  color: #999999;
   font-weight: bold;
 }
 
 .thumbnail {
-  background-color: #ffffff2e;
   width: 100px;
   text-align: center;
 }
@@ -72,12 +69,11 @@
 }
 
 .details {
-  margin-top: 32px;
- text-align: center;
+  margin-top: 10px;
 }
 
 .info {
-  color: #000000;
+  color: #999999;
 }
 
 .controls {
@@ -112,6 +108,8 @@
   color: #ffffff;
 }
 
+/* Comment CSS */
+
 #commentForm>* {
   display: block;
   width: 400px;
@@ -123,8 +121,26 @@
 }
 
 #commentForm>textarea {
-  resize: none;
-  height: 6em;
+    width: 500px;
+    height: 100px;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll rgba(255, 255, 255);
+    border-color: -moz-use-text-color #FFFFFF #FFFFFF -moz-use-text-color;
+    border-image: none;
+    border-radius: 6px 6px 6px 6px;
+    border-style: none solid solid none;
+    border-width: medium 1px 1px medium;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12) inset;
+    color: #000000;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.4em;
+    padding: 5px 8px;
+    transition: background-color 0.2s ease 0s;
+
 }
 
 #commentForm>input[type="submit"] {
@@ -132,10 +148,6 @@
   width: 100px;
 }
 
-.posts{
-  flex-wrap: wrap;
-    display: flex;
-}
 
 
 

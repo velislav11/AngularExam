@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { APP_KEY, APP_SECRET } from 'src/app/kinvey.tokens';
+import { CommentInfo } from 'src/app/components/shared/models/Comment-Info';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class CommentService {
   ) { }
 
   getAllForPost(postId: string) {
-    return this.http.get<Object[]>(`${this.CREATE_COMMENT}?query={"postId":"${postId}"}&sort={"_kmd.ect": -1}`, {
+    return this.http.get<CommentInfo[]>(`${this.CREATE_COMMENT}?query={"postId":"${postId}"}&sort={"_kmd.ect": -1}`, {
       headers: new HttpHeaders({
         'Authorization': `Kinvey ${localStorage.getItem('token')}`
       })

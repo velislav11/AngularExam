@@ -17,6 +17,9 @@ import { HomeComponent } from './components/shared/home/home.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { ComponentComponent } from './components/shared/component/component.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
+import { PostInfoComponent } from './components/posts/post-info/post-info.component';
+import { CommentInfoComponent } from './components/comments/comment-info/comment-info.component';
+import { CommentCreateComponent } from './components/comments/comment-create/comment-create.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { FooterComponent } from './components/shared/footer/footer.component';
     HeaderComponent,
     ComponentComponent,
     FooterComponent,
+    PostInfoComponent,
+    CommentInfoComponent,
+    CommentCreateComponent,
   ],
   imports: [
     BrowserModule,
