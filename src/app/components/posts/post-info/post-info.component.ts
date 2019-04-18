@@ -21,6 +21,8 @@ export class PostInfoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+   
+    
   }
   
   isAuthor(post: Object) {
