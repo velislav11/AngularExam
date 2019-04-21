@@ -7,17 +7,18 @@ import { PostCreateComponent } from './components/posts/post-create/post-create.
 import { PostEditComponent } from './components/posts/post-edit/post-edit.component';
 import { PostDetailsComponent } from './components/posts/post-details/post-details.component';
 import { HomeComponent } from './components/shared/home/home.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home' ,component:HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'posts', component: PostListComponent },
-  { path: 'posts/user', component: PostListComponent },
-  { path: 'posts/create', component: PostCreateComponent },
-  { path: 'posts/edit/:id', component: PostEditComponent },
-  { path: 'posts/details/:id', component: PostDetailsComponent }
+  { path: 'posts', component: PostListComponent, canActivate: [AuthGuard], },
+  { path: 'posts/user', component: PostListComponent, canActivate: [AuthGuard], },
+  { path: 'posts/create', component: PostCreateComponent, canActivate: [AuthGuard], },
+  { path: 'posts/edit/:id', component: PostEditComponent, canActivate: [AuthGuard], },
+  { path: 'posts/details/:id', component: PostDetailsComponent, canActivate: [AuthGuard], }
 ];
 
 @NgModule({

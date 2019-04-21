@@ -1,40 +1,44 @@
 <article class="post">
-    <div class="col rank">
-      <span>{{post['_kmd']['lmt'] | date}}</span>
-    </div>
-    <div class="col thumbnail">
+  <div class="col rank">
+    <span>{{post['_kmd']['lmt'] | date}}</span>
+  </div>
+  <div class="col thumbnail">
+    <a *ngIf='desc' href="{{post['url']}}">
+      <img src="{{post['imageUrl']}}">
+    </a>
+    <a *ngIf='!desc' [routerLink]="[ '/posts/details', post['_id'] ]">
+      <img src="{{post['imageUrl']}}">
+    </a>
+  </div>
+  <div class="post-content">
+    <div class="title">
+      <!-- *ngIf='isAdmin()'  -->
+
+      <a *ngIf='!desc' [routerLink]="[ '/posts/details', post['_id'] ]">
+        {{post['title']}}
+      </a>
+
       <a *ngIf='desc' href="{{post['url']}}">
-        <img src="{{post['imageUrl']}}">
-      </a>
-        <a *ngIf='!desc' [routerLink]="[ '/posts/details', post['_id'] ]">
-        <img src="{{post['imageUrl']}}">
+        {{post['title']}}
       </a>
     </div>
-    <div class="post-content">
-      <div class="title">
-        <a *ngIf='!desc' [routerLink]="[ '/posts/details', post['_id'] ]">
-          {{post['title']}}
-        </a>
-        <a *ngIf='desc' href="{{post['url']}}">
-          {{post['title']}}
-        </a>
+    <div class="details">
+      <p *ngIf="desc">{{post['description']}}</p>
+      <div class="info">
+        Posted by {{post['author']}}
       </div>
-      <div class="details">
-        <p *ngIf="desc">{{post['description']}}</p>
-        <div class="info">
-          Posted by {{post['author']}}
-        </div>
-        <div class="controls">
-          <ul>
-            <li *ngIf='!desc' class="action">
-              <a [routerLink]="[ '/posts/details', post['_id'] ]" class="commentsLink">comments</a>
-            </li>
-            <ng-template [ngIf]="isAuthor(post)">
-              <li class="action"><a [routerLink]="[ '/posts/edit', post['_id'] ]" href="#">edit</a></li>
-              <li class="action"><button (click)="onDeletePost(post['_id'])">delete</button></li>
-            </ng-template>
-          </ul>
-        </div>
+      <div class="controls">
+        <ul>
+          <li *ngIf='!desc' class="action">
+            <a [routerLink]="[ '/posts/details', post['_id'] ]" class="commentsLink">comments</a>
+          </li>
+          <ng-template [ngIf]="isAuthorIsAdmin(post)">
+            <li class="action"><a [routerLink]="[ '/posts/edit', post['_id'] ]" href="#">edit</a></li>
+            <li class="action"><button (click)="onDeletePost(post['_id'])">delete</button></li>
+          </ng-template>
+         
+        </ul>
       </div>
     </div>
-  </article>
+  </div>
+</article>

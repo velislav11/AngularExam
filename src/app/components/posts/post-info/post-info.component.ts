@@ -4,6 +4,8 @@ import { PostService } from 'src/app/core/services/post.service';
 import { Router } from '@angular/router';
 import { CommentInfo } from '../../shared/models/Comment-Info';
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/core/services/auth.service';
+
 
 @Component({
   selector: 'app-post-info',
@@ -18,14 +20,19 @@ export class PostInfoComponent implements OnInit {
   constructor(
     private postService: PostService,
     private  router: Router,
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {
    
     
   }
+
   
-  isAuthor(post: Object) {
+  isAuthorIsAdmin(post: Object) {
+    if(this.authService.author === 'Admin'){
+      return true;
+    }
     return post['_acl']['creator'] === localStorage.getItem('userId');
   }
 

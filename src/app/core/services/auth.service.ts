@@ -16,6 +16,9 @@ export class AuthService {
   get token() {
     return localStorage.getItem('token');
   }
+  get author() {
+    return localStorage.getItem('username');
+  }
 
   signUp(body: Object) {
     return this.http.post(this.BASE_URL, body,
